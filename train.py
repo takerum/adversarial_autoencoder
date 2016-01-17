@@ -130,7 +130,7 @@ def train(latent_dim = 2, #dimension of latent variable z
         color=cm.rainbow(numpy.linspace(0,1,10))
         for l,c in zip(range(10),color):
             ix = numpy.where(dataset[1][1].get_value()==l)[0]
-            plt.scatter(output[ix,0],output[ix,1],c=c,label=l,s=15,linewidth=0)
+            plt.scatter(output[ix,0],output[ix,1],c=c,label=l,s=8,linewidth=0)
         plt.xlim([-5.0,5.0])
         plt.ylim([-5.0,5.0])
         plt.legend(fontsize=15)
