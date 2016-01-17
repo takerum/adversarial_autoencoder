@@ -1,0 +1,12 @@
+
+import cross_entropy_loss
+import quadratic_loss
+import weight_decay
+import binary_cross_entropy_loss
+import adversarial_autoenc_loss
+
+cross_entropy_loss = cross_entropy_loss.cross_entropy_loss
+binary_cross_entropy_loss = binary_cross_entropy_loss.binary_cross_entropy_loss
+quadratic_loss = quadratic_loss.quadratic_loss
+weight_decay = weight_decay.weight_decay
+adversarial_autoenc_loss = adversarial_autoenc_loss.adversarial_autoenc_loss
