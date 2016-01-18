@@ -10,4 +10,4 @@ See https://github.com/takerum/adversarial_autoencoder/blob/master/train_adv_aut
 python 2.7, theano 0.7.0
 
 ##References:
-Adversarial Autoenocders (http://arxiv.org/abs/1511.05644)
+[1] Alireza Makhzani, Jonathon Shlens, Navdeep Jaitly and Ian Goodfellow. Adversarial Autoenocders. arXiv preprint (http://arxiv.org/abs/1511.05644).
