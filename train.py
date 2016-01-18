@@ -28,6 +28,7 @@ def make_sure_path_exists(path):
 def train(latent_dim = 2, #dimension of latent variable z
           z_prior = 'gaussian', # 'gaussian' or 'uniform'
           lamb = 100., #ratio between reconstruction and adversarial cost
+          recon_obj_type = 'CE', #objective function on reconstruction ( 'CE'(cross ent.) or 'QE' (quadratic error) )
           initlal_learning_rate = 0.002,
           learning_rate_decay=0.9,
           num_epochs=50,
@@ -52,7 +53,7 @@ def train(latent_dim = 2, #dimension of latent variable z
                                           dec_f=model.decode_train,
                                           disc_f=model.D_train,
                                           q_sampler=model.sample_from_prior,
-                                          obj_type='CE',
+                                          obj_type=recon_obj_type,
                                           lamb=numpy.asarray(lamb,dtype=theano.config.floatX))
 
     _,recon_loss,adv_loss = costs.adversarial_autoenc_loss(x=x,
@@ -60,7 +61,7 @@ def train(latent_dim = 2, #dimension of latent variable z
                                           dec_f=model.decode_test,
                                           disc_f=model.D_test,
                                           q_sampler=model.sample_from_prior,
-                                          obj_type='CE',
+                                          obj_type=recon_obj_type,
                                           lamb=numpy.asarray(lamb,dtype=theano.config.floatX))
 
     optimizer_recon = optimizers.ADAM(cost=loss_for_training,
