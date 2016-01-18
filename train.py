@@ -28,7 +28,7 @@ def make_sure_path_exists(path):
 def train(latent_dim = 2, #dimension of latent variable z
           z_prior = 'gaussian', # 'gaussian' or 'uniform'
           lamb = 100., #ratio between reconstruction and adversarial cost
-          recon_obj_type = 'CE', #objective function on reconstruction ( 'CE'(cross ent.) or 'QE' (quadratic error) )
+          recon_obj_type = 'CE', #objective function on reconstruction ( 'CE'(cross ent.) or 'QE'(quadratic error) )
           initlal_learning_rate = 0.002,
           learning_rate_decay=0.9,
           num_epochs=50,
