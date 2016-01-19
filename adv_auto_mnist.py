@@ -16,18 +16,18 @@ class AdversarialAutoencoderMNIST(AdversarialAutoencoder):
 
         self.z_prior = z_prior
 
-        self.enc_l1 = L.Linear((784,500))
-        self.enc_b1 = L.BatchNormalization(500)
-        self.enc_l2 = L.Linear((500,500))
-        self.enc_b2 = L.BatchNormalization(500)
-        self.enc_l3 = L.Linear((500,latent_dim))
+        self.enc_l1 = L.Linear((784,1000))
+        self.enc_b1 = L.BatchNormalization(1000)
+        self.enc_l2 = L.Linear((1000,1000))
+        self.enc_b2 = L.BatchNormalization(1000)
+        self.enc_l3 = L.Linear((1000,latent_dim))
         self.enc_b3 = L.BatchNormalization(latent_dim)
 
-        self.dec_l1 = L.Linear((latent_dim,500))
-        self.dec_b1 = L.BatchNormalization(500)
-        self.dec_l2 = L.Linear((500,500))
-        self.dec_b2 = L.BatchNormalization(500)
-        self.dec_l3 = L.Linear((500,784))
+        self.dec_l1 = L.Linear((latent_dim,1000))
+        self.dec_b1 = L.BatchNormalization(1000)
+        self.dec_l2 = L.Linear((1000,1000))
+        self.dec_b2 = L.BatchNormalization(1000)
+        self.dec_l3 = L.Linear((1000,784))
 
         self.D_l1 = L.Linear((latent_dim,500))
         self.D_b1 = L.BatchNormalization(500)
