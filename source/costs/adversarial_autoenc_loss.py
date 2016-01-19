@@ -24,8 +24,8 @@ def adversarial_loss(z_p,z_q,disc_f):
 
 def reconstruction_loss(x,z,dec_f,obj_type='QE'):
     x_ = dec_f(z)
-    if obj_type is 'QE':
+    if obj_type == 'QE':
         return _quadratic_loss(x_,x)
-    elif obj_type is 'CE':
+    elif obj_type == 'CE':
         return _binary_cross_entropy_loss(x_,x)
 
