@@ -12,7 +12,7 @@ See https://github.com/takerum/adversarial_autoencoder/blob/master/train_adv_aut
 
 - The input x sampled from the trained adversarial autoencoder with 8-D gaussian prior distribution.
 
-<img src="./figure/x_sampled_gaussian_8.png" width="400">
+<img src="./figure/x_gaussian_8.png" width="400">
 
 ##Required libraries:
 python 2.7, theano 0.7.0
